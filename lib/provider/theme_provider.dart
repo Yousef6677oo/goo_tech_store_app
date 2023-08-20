@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../utilities/app_themes.dart';
 
 class ThemeProvider extends Cubit<CurrentTheme> {
-  static ThemeData currentTheme = AppThemes.lightTheme;
+  static ThemeData currentTheme = AppThemes.darkTheme;
 
   ThemeProvider() : super(LightTheme());
 

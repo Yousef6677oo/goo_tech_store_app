@@ -28,13 +28,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       body: Form(
         key: _formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(height: height * 0.09),
-            Expanded(
-              flex: 1,
-              child: Container(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(height: height * 0.09),
+              Container(
                 alignment: Alignment.topLeft,
                 child: InkWell(
                     onTap: () {
@@ -42,11 +41,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     },
                     child: CustomBackArrowIcon()),
               ),
-            ),
-            SizedBox(height: height * 0.05),
-            Expanded(
-              flex: 3,
-              child: Text(
+              SizedBox(height: height * 0.05),
+              Text(
                 "Sign Up",
                 style: TextStyle(
                     fontSize: 28,
@@ -54,69 +50,63 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     color: Theme.of(context).secondaryHeaderColor),
                 textAlign: TextAlign.center,
               ),
-            ),
-            Expanded(
-                flex: 2,
-                child: CustomAuthTextFiled(
-                  labelText: 'Username',
-                  controller: userNameController,
-                  validator: validatePasswordTextField,
-                )),
-            Expanded(
-                flex: 2,
-                child: CustomAuthTextFiled(
-                  labelText: 'Password',
-                  controller: passwordController,
-                  validator: validateUserNameTextField,
-                )),
-            Expanded(
-                flex: 2,
-                child: CustomAuthTextFiled(
-                  labelText: 'Email Address',
-                  controller: emailAddressController,
-                  validator: validateEmailTextField,
-                )),
-            Expanded(
-                child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-                  child: Text(
-                    "Remember me",
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: Theme.of(context).secondaryHeaderColor),
+              SizedBox(height: height * 0.15),
+              CustomAuthTextFiled(
+                labelText: 'Username',
+                controller: userNameController,
+                validator: validatePasswordTextField,
+              ),
+              SizedBox(height: height * 0.03),
+              CustomAuthTextFiled(
+                labelText: 'Password',
+                controller: passwordController,
+                validator: validateUserNameTextField,
+              ),
+              SizedBox(height: height * 0.03),
+              CustomAuthTextFiled(
+                labelText: 'Email Address',
+                controller: emailAddressController,
+                validator: validateEmailTextField,
+              ),
+              SizedBox(height: height * 0.045),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+                    child: Text(
+                      "Remember me",
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                          color: Theme.of(context).secondaryHeaderColor),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-                  child: CupertinoSwitch(
-                      activeColor: AppColors.switchActiveColor,
-                      value: isOnSwitch,
-                      onChanged: (currentValue) {
-                        isOnSwitch = currentValue;
-                        setState(() {});
-                      }),
-                )
-              ],
-            )),
-            const Spacer(
-              flex: 2,
-            ),
-          ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+                    child: CupertinoSwitch(
+                        activeColor: AppColors.switchActiveColor,
+                        value: isOnSwitch,
+                        onChanged: (currentValue) {
+                          isOnSwitch = currentValue;
+                          setState(() {});
+                        }),
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: InkWell(
           onTap: () {
-            signIn();
+            signUp();
           },
           child: CustomButtonScreenName(screenName: "Sign Up")),
     );
   }
 
-  void signIn() {
+  void signUp() {
     if (_formKey.currentState?.validate() == false) {
       return;
     }
