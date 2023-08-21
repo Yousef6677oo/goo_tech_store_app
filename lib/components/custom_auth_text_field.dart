@@ -6,7 +6,11 @@ class CustomAuthTextFiled extends StatelessWidget {
   String labelText;
   TextEditingController controller;
   Function validator;
-  CustomAuthTextFiled({required this.labelText, required this.controller,required this.validator});
+
+  CustomAuthTextFiled(
+      {required this.labelText,
+      required this.controller,
+      required this.validator});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +20,7 @@ class CustomAuthTextFiled extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: width * 0.05),
       child: TextFormField(
         controller: controller,
-        validator: (value){
+        validator: (value) {
           return validator(value);
         },
         decoration: InputDecoration(

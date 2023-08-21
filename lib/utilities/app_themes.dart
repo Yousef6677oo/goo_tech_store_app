@@ -11,26 +11,38 @@ abstract class AppThemes {
       secondaryHeaderColor: AppColors.secondaryHeaderColorLight,
       bottomAppBarTheme:
           const BottomAppBarTheme(color: AppColors.accentColorLight),
-      hintColor: AppColors.hintColorLight);
+      hintColor: AppColors.hintColorLight,
+      drawerTheme:
+          const DrawerThemeData(backgroundColor: AppColors.drawerColorLight),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: AppColors.bottomNavBarLight));
 
   static ThemeData darkTheme = ThemeData(
-      scaffoldBackgroundColor: AppColors.primaryColorDark,
-      splashColor: AppColors.primaryColorDark,
-      cardColor: AppColors.genderBottomColorDark,
-      appBarTheme: const AppBarTheme(color: Colors.transparent, elevation: 0),
-      secondaryHeaderColor: AppColors.secondaryHeaderColorDark,
-      bottomAppBarTheme:
-          const BottomAppBarTheme(color: AppColors.accentColorDark),
-      hintColor: AppColors.hintColorDark);
+    scaffoldBackgroundColor: AppColors.primaryColorDark,
+    splashColor: AppColors.primaryColorDark,
+    cardColor: AppColors.genderBottomColorDark,
+    appBarTheme: const AppBarTheme(color: Colors.transparent, elevation: 0),
+    secondaryHeaderColor: AppColors.secondaryHeaderColorDark,
+    bottomAppBarTheme:
+        const BottomAppBarTheme(color: AppColors.accentColorDark),
+    hintColor: AppColors.hintColorDark,
+    drawerTheme:
+        const DrawerThemeData(backgroundColor: AppColors.drawerColorDark),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: AppColors.bottomNavBarDark),
+  );
 
   static ThemeData blueTheme = ThemeData(
-    scaffoldBackgroundColor: AppColors.primaryColorBlue,
-    splashColor: AppColors.accentColorBlue,
-    cardColor: AppColors.genderBottomColorBlue,
-    appBarTheme: const AppBarTheme(color: Colors.transparent, elevation: 0),
-    secondaryHeaderColor: AppColors.secondaryHeaderColorBlue,
-    bottomAppBarTheme:
-        const BottomAppBarTheme(color: AppColors.accentColorBlue),
-    hintColor: AppColors.hintColorBlue,
-  );
+      scaffoldBackgroundColor: AppColors.primaryColorBlue,
+      splashColor: AppColors.accentColorBlue,
+      cardColor: AppColors.genderBottomColorBlue,
+      appBarTheme: const AppBarTheme(color: Colors.transparent, elevation: 0),
+      secondaryHeaderColor: AppColors.secondaryHeaderColorBlue,
+      bottomAppBarTheme:
+          const BottomAppBarTheme(color: AppColors.accentColorBlue),
+      hintColor: AppColors.hintColorBlue,
+      drawerTheme:
+          const DrawerThemeData(backgroundColor: AppColors.drawerColorBlue),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: AppColors.bottomNavBarBlue));
 }

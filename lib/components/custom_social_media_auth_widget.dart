@@ -20,7 +20,7 @@ class CustomSocialMediaAuthWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(
+            const Spacer(
               flex: 2,
             ),
             Expanded(
@@ -46,7 +46,7 @@ class CustomSocialMediaAuthWidget extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(
+            const Spacer(
               flex: 2,
             )
           ],
