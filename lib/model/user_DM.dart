@@ -1,4 +1,4 @@
-class UserDM{
+class UserDM {
   static UserDM? currentUser;
   String id;
   String email;

@@ -17,18 +17,19 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  List<Widget> tabs =[
-    HomeTab(),
-    WishlistTab(),
-    CartTab(),
-    WalletTab()
-  ];
+  List<Widget> tabs = [HomeTab(), WishlistTab(), CartTab(), WalletTab()];
   int currentIndex = 0;
+  bool notNav = true;
   late double height;
   late double width;
 
   @override
   Widget build(BuildContext context) {
+    var navIndex = ModalRoute.of(context)!.settings.arguments;
+    if (navIndex != null && notNav) {
+      currentIndex = int.parse("$navIndex");
+      notNav = false;
+    }
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -53,11 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: EdgeInsets.only(right: width * 0.02),
             child: GestureDetector(
-              onTap: (){
-                currentIndex=2;
-                setState(() {
-
-                });
+              onTap: () {
+                currentIndex = 2;
+                setState(() {});
               },
               child: SvgPicture.asset(
                 "assets/Images/bag_icon.svg",
@@ -69,9 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         toolbarHeight: height * 0.15,
       ),
-      body: SingleChildScrollView(
-        child: tabs[currentIndex]
-      ),
+      body: tabs[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
@@ -120,10 +117,10 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         : Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
-                color: Theme.of(context).splashColor),
+                color: Color(0xff9775FA)),
           );
   }
 }

@@ -31,18 +31,4 @@ abstract class AppThemes {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: AppColors.bottomNavBarDark),
   );
-
-  static ThemeData blueTheme = ThemeData(
-      scaffoldBackgroundColor: AppColors.primaryColorBlue,
-      splashColor: AppColors.accentColorBlue,
-      cardColor: AppColors.genderBottomColorBlue,
-      appBarTheme: const AppBarTheme(color: Colors.transparent, elevation: 0),
-      secondaryHeaderColor: AppColors.secondaryHeaderColorBlue,
-      bottomAppBarTheme:
-          const BottomAppBarTheme(color: AppColors.accentColorBlue),
-      hintColor: AppColors.hintColorBlue,
-      drawerTheme:
-          const DrawerThemeData(backgroundColor: AppColors.drawerColorBlue),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          backgroundColor: AppColors.bottomNavBarBlue));
 }

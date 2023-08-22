@@ -20,7 +20,7 @@ abstract class FirebaseManager {
       }
       final credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      await getUserFromFireStore(credential.user!.uid,email);
+      await getUserFromFireStore(credential.user!.uid, email);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         throw UserNotFound();
@@ -38,7 +38,7 @@ abstract class FirebaseManager {
       }
       final credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
-      await saveUserInFireStore(credential.user!.uid,email,userName);
+      await saveUserInFireStore(credential.user!.uid, email, userName);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         throw WeakPassword();
@@ -100,19 +100,19 @@ abstract class FirebaseManager {
   }
 
   static Future saveUserInFireStore(String uid, String email, String userName) {
-    CollectionReference userCollection = FirebaseFirestore.instance.collection("users");
+    CollectionReference userCollection =
+        FirebaseFirestore.instance.collection("users");
     DocumentReference userDocument = userCollection.doc(uid);
     return userDocument.set({"id": uid, "email": email, "username": userName});
   }
 
-  static Future<UserDM> getUserFromFireStore(String uid,String email) async {
+  static Future<UserDM> getUserFromFireStore(String uid, String email) async {
     CollectionReference userCollection =
-    FirebaseFirestore.instance.collection("users");
+        FirebaseFirestore.instance.collection("users");
     DocumentReference doc = userCollection.doc(uid);
     DocumentSnapshot snapshot = await doc.get();
     Map json = snapshot.data() as Map;
-    UserDM user = UserDM(
-        id: uid, email: email, userName: json["username"]);
+    UserDM user = UserDM(id: uid, email: email, userName: json["username"]);
     return user;
   }
 }

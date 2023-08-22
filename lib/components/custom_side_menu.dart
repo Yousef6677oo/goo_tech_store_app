@@ -27,11 +27,10 @@ class _customSideMenuState extends State<customSideMenu> {
             },
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0),
-              child: SvgPicture.asset(
-                "assets/Images/side_menu_icon.svg",
-                width: width * 0.1,
-                color: Theme.of(context).secondaryHeaderColor,
-              ),
+              child: SvgPicture.asset("assets/Images/side_menu_icon.svg",
+                  width: width * 0.1,
+                  colorFilter: ColorFilter.mode(
+                      Theme.of(context).secondaryHeaderColor, BlendMode.srcIn)),
             ),
           ),
           SizedBox(height: height * 0.03),
@@ -73,7 +72,7 @@ class _customSideMenuState extends State<customSideMenu> {
               Container(
                 decoration: BoxDecoration(
                     color: Theme.of(context).cardColor,
-                    borderRadius: BorderRadius.circular(8)),
+                    borderRadius: BorderRadius.circular(5)),
                 child: Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: height * 0.02, horizontal: 5),
@@ -92,16 +91,18 @@ class _customSideMenuState extends State<customSideMenu> {
           Row(
             children: [
               SizedBox(width: width * 0.04),
-              SvgPicture.asset(
-                "assets/Images/side_menu_dark_mode_icon.svg",
-                width: width * 0.1,
-              ),
+              SvgPicture.asset("assets/Images/side_menu_dark_mode_icon.svg",
+                  width: width * 0.1,
+                  colorFilter: ColorFilter.mode(
+                      Theme.of(context).hintColor, BlendMode.srcIn)),
               SizedBox(width: width * 0.07),
-              const Text("Dark Mode",
+              Text("Dark Mode",
                   style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'Inter-VariableFont')),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Inter-VariableFont',
+                    color: Theme.of(context).hintColor,
+                  )),
               SizedBox(width: width * 0.035),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: width * 0.06),
@@ -120,16 +121,19 @@ class _customSideMenuState extends State<customSideMenu> {
             children: [
               SizedBox(width: width * 0.04),
               SvgPicture.asset(
-                "assets/Images/side_menu_account_information_icon.svg",
-                width: width * 0.1,
-              ),
+                  "assets/Images/side_menu_account_information_icon.svg",
+                  width: width * 0.1,
+                  colorFilter: ColorFilter.mode(
+                      Theme.of(context).hintColor, BlendMode.srcIn)),
               SizedBox(width: width * 0.07),
-              const Text(
+              Text(
                 "Account Information",
                 style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Inter-VariableFont'),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Inter-VariableFont',
+                  color: Theme.of(context).hintColor,
+                ),
               )
             ],
           ),
@@ -137,17 +141,19 @@ class _customSideMenuState extends State<customSideMenu> {
           Row(
             children: [
               SizedBox(width: width * 0.04),
-              SvgPicture.asset(
-                "assets/Images/side_menu_lock_password_icon.svg",
-                width: width * 0.1,
-              ),
+              SvgPicture.asset("assets/Images/side_menu_lock_password_icon.svg",
+                  width: width * 0.1,
+                  colorFilter: ColorFilter.mode(
+                      Theme.of(context).hintColor, BlendMode.srcIn)),
               SizedBox(width: width * 0.07),
-              const Text(
+              Text(
                 "Password",
                 style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Inter-VariableFont'),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Inter-VariableFont',
+                  color: Theme.of(context).hintColor,
+                ),
               )
             ],
           ),
@@ -155,17 +161,19 @@ class _customSideMenuState extends State<customSideMenu> {
           Row(
             children: [
               SizedBox(width: width * 0.04),
-              SvgPicture.asset(
-                "assets/Images/side_menu_bag_order_icon.svg",
-                width: width * 0.1,
-              ),
+              SvgPicture.asset("assets/Images/side_menu_bag_order_icon.svg",
+                  width: width * 0.1,
+                  colorFilter: ColorFilter.mode(
+                      Theme.of(context).hintColor, BlendMode.srcIn)),
               SizedBox(width: width * 0.07),
-              const Text(
+              Text(
                 "Order",
                 style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Inter-VariableFont'),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Inter-VariableFont',
+                  color: Theme.of(context).hintColor,
+                ),
               )
             ],
           ),
@@ -174,16 +182,19 @@ class _customSideMenuState extends State<customSideMenu> {
             children: [
               SizedBox(width: width * 0.04),
               SvgPicture.asset(
-                "assets/Images/side_menu_wallet_my_cards_icon.svg",
-                width: width * 0.1,
-              ),
+                  "assets/Images/side_menu_wallet_my_cards_icon.svg",
+                  width: width * 0.1,
+                  colorFilter: ColorFilter.mode(
+                      Theme.of(context).hintColor, BlendMode.srcIn)),
               SizedBox(width: width * 0.07),
-              const Text(
+              Text(
                 "My Cards",
                 style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Inter-VariableFont'),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Inter-VariableFont',
+                  color: Theme.of(context).hintColor,
+                ),
               )
             ],
           ),
@@ -192,16 +203,19 @@ class _customSideMenuState extends State<customSideMenu> {
             children: [
               SizedBox(width: width * 0.04),
               SvgPicture.asset(
-                "assets/Images/side_menu_heart_wishlist_icon.svg",
-                width: width * 0.1,
-              ),
+                  "assets/Images/side_menu_heart_wishlist_icon.svg",
+                  width: width * 0.1,
+                  colorFilter: ColorFilter.mode(
+                      Theme.of(context).hintColor, BlendMode.srcIn)),
               SizedBox(width: width * 0.07),
-              const Text(
+              Text(
                 "Wishlist",
                 style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Inter-VariableFont'),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Inter-VariableFont',
+                  color: Theme.of(context).hintColor,
+                ),
               )
             ],
           ),
@@ -209,17 +223,19 @@ class _customSideMenuState extends State<customSideMenu> {
           Row(
             children: [
               SizedBox(width: width * 0.04),
-              SvgPicture.asset(
-                "assets/Images/side_menu_settings_icon.svg",
-                width: width * 0.1,
-              ),
+              SvgPicture.asset("assets/Images/side_menu_settings_icon.svg",
+                  width: width * 0.1,
+                  colorFilter: ColorFilter.mode(
+                      Theme.of(context).hintColor, BlendMode.srcIn)),
               SizedBox(width: width * 0.07),
-              const Text(
+              Text(
                 "Settings",
                 style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Inter-VariableFont'),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Inter-VariableFont',
+                  color: Theme.of(context).hintColor,
+                ),
               )
             ],
           ),
@@ -229,6 +245,8 @@ class _customSideMenuState extends State<customSideMenu> {
               SizedBox(width: width * 0.05),
               SvgPicture.asset(
                 "assets/Images/side_menu_log_out_icon.svg",
+                colorFilter: ColorFilter.mode(
+                    Theme.of(context).hintColor, BlendMode.srcIn),
                 width: width * 0.1,
               ),
               SizedBox(width: width * 0.07),

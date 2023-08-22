@@ -155,11 +155,11 @@ class _SignInScreenState extends State<SignInScreen> {
                   padding: EdgeInsets.symmetric(horizontal: width * 0.01),
                   child: RichText(
                       textAlign: TextAlign.center,
-                      text: const TextSpan(
-                          style: TextStyle(color: Colors.blue),
+                      text: TextSpan(
+                          style: const TextStyle(color: Colors.blue),
                           //apply style to all
                           children: [
-                            TextSpan(
+                            const TextSpan(
                               text:
                                   'By connecting your account confirm that you agree with our',
                               style: TextStyle(
@@ -172,7 +172,8 @@ class _SignInScreenState extends State<SignInScreen> {
                               style: TextStyle(
                                   fontSize: 17,
                                   fontWeight: FontWeight.w600,
-                                  color: Color(0xff1D1E20)),
+                                  color:
+                                      Theme.of(context).secondaryHeaderColor),
                             ),
                           ])),
                 ),

@@ -23,6 +23,10 @@ class CustomAuthTextFiled extends StatelessWidget {
         validator: (value) {
           return validator(value);
         },
+        style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+            color: Theme.of(context).secondaryHeaderColor),
         decoration: InputDecoration(
           contentPadding: EdgeInsets.only(bottom: height * 0.01),
           labelText: labelText,

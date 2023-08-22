@@ -18,9 +18,10 @@ class _SelectTypeGenderScreenState extends State<SelectTypeGenderScreen> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/Images/screen_1_for_test.png'),
-                fit: BoxFit.fill)),
+          image: DecorationImage(
+              image: AssetImage('assets/Images/light_screen_for_test.png'),
+              fit: BoxFit.fill),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

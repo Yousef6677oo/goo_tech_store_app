@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'NEAR TECH',
+            'GOO TECH',
             style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.w700,

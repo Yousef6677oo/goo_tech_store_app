@@ -19,12 +19,4 @@ abstract class AppColors {
   static const Color hintColorDark = Color(0xffF5F8FB);
   static const Color drawerColorDark = Color(0xff1B262C);
   static const Color bottomNavBarDark = Color(0xff29363D);
-
-  static const Color primaryColorBlue = Color(0xffFEFEFE);
-  static const Color accentColorBlue = Color(0xff3D93F8);
-  static const Color genderBottomColorBlue = Color(0xffF5F6FA);
-  static const Color secondaryHeaderColorBlue = Color(0xff1D1E20);
-  static const Color hintColorBlue = Color(0xff1D1E20);
-  static const Color drawerColorBlue = Color(0xffFFFFFF);
-  static const Color bottomNavBarBlue = Color(0xffFEFEFE);
 }
