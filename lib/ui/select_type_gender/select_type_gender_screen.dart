@@ -1,7 +1,8 @@
+import 'package:e_commerce_app/data/hive_manager.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/custom_gender_button.dart';
-import '../choose_way_to_authenticate/choose_way_to_authenticate_screen.dart';
+import '../authentication_way/authentication_way_screen.dart';
 
 class SelectTypeGenderScreen extends StatefulWidget {
   static const String routeName = "select_type_gender_screen";
@@ -15,11 +16,15 @@ class _SelectTypeGenderScreenState extends State<SelectTypeGenderScreen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/Images/light_screen_for_test.png'),
+              image: AssetImage(isDarkMode
+                  ? 'assets/Images/dark_screen_for_test.png'
+                  : 'assets/Images/light_screen_for_test.png'),
               fit: BoxFit.fill),
         ),
         child: Column(
@@ -65,7 +70,8 @@ class _SelectTypeGenderScreenState extends State<SelectTypeGenderScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         InkWell(
-                          onTap: () {
+                          onTap: () async {
+                            await HiveManager.myBox?.put('gender', 'male');
                             navigateToCreateAccountScreen();
                           },
                           child: CustomGenderButton(
@@ -75,7 +81,8 @@ class _SelectTypeGenderScreenState extends State<SelectTypeGenderScreen> {
                         ),
                         SizedBox(width: width * 0.03),
                         InkWell(
-                          onTap: () {
+                          onTap: () async {
+                            await HiveManager.myBox?.put('gender', 'female');
                             navigateToCreateAccountScreen();
                           },
                           child: CustomGenderButton(
@@ -114,6 +121,6 @@ class _SelectTypeGenderScreenState extends State<SelectTypeGenderScreen> {
   }
 
   navigateToCreateAccountScreen() {
-    Navigator.pushNamed(context, ChooseWayToAuthenticateScreen.routeName);
+    Navigator.pushNamed(context, AuthenticationWayScreen.routeName);
   }
 }

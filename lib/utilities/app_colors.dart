@@ -11,6 +11,7 @@ abstract class AppColors {
   static const Color hintColorLight = Color(0xff1D1E20);
   static const Color drawerColorLight = Color(0xffFFFFFF);
   static const Color bottomNavBarLight = Color(0xffFEFEFE);
+  static const Color reviewsButtonLight = Color(0xffFF7043);
 
   static const Color primaryColorDark = Color(0xff1B262C);
   static const Color accentColorDark = Color(0xff9775FA);
@@ -19,4 +20,5 @@ abstract class AppColors {
   static const Color hintColorDark = Color(0xffF5F8FB);
   static const Color drawerColorDark = Color(0xff1B262C);
   static const Color bottomNavBarDark = Color(0xff29363D);
+  static const Color reviewsButtonDark = Color(0xff9775FA);
 }

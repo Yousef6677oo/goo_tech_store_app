@@ -8,10 +8,10 @@ import '../../custom_exception/sign_in_exceptions/wrong_password.dart';
 class SignInViewModel extends Cubit<SignInViewState> {
   SignInViewModel() : super(InitState());
 
-  Future<void> signIn(String email, String password) async {
+  Future<void> signIn(String email, String password, bool rememberMe) async {
     emit(LoadingState());
     try {
-      await FirebaseManager.signIn(email, password);
+      await FirebaseManager.signIn(email, password, rememberMe);
       emit(SuccessState());
     } catch (exception) {
       if (exception is UserNotFound) {

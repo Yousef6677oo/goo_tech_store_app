@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ThemeProvider extends Cubit<CurrentTheme> {
   ThemeMode currentTheme = ThemeMode.system;
 
-  ThemeProvider() : super(LightTheme());
+  ThemeProvider() : super(InitState());
 
   convertToLightMode() {
     currentTheme = ThemeMode.light;
@@ -18,6 +18,8 @@ class ThemeProvider extends Cubit<CurrentTheme> {
 }
 
 abstract class CurrentTheme {}
+
+class InitState extends CurrentTheme {}
 
 class LightTheme extends CurrentTheme {}
 

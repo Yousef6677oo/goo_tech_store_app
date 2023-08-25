@@ -1,3 +1,4 @@
+import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:e_commerce_app/ui/home/tabs/cart/cart_tab.dart';
 import 'package:e_commerce_app/ui/home/tabs/home/home_tab.dart';
 import 'package:e_commerce_app/ui/home/tabs/wallet/wallet_tab.dart';
@@ -68,7 +69,11 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         toolbarHeight: height * 0.15,
       ),
-      body: tabs[currentIndex],
+      body: DoubleBackToCloseApp(
+          snackBar: const SnackBar(
+            content: Text('Tap back again to leave'),
+          ),
+          child: tabs[currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,

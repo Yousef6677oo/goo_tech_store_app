@@ -1,4 +1,3 @@
-import 'package:e_commerce_app/ui/choose_way_to_authenticate/choose_way_to_authenticate_view_model.dart';
 import 'package:e_commerce_app/ui/sign_up/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,17 +6,17 @@ import '../../components/custom_back_arrow_icon.dart';
 import '../../components/custom_button_screen_name.dart';
 import '../../components/custom_social_media_auth_widget.dart';
 import '../sign_in/sign_in_screen.dart';
+import 'authentication_way_view_model.dart';
 
-class ChooseWayToAuthenticateScreen extends StatelessWidget {
-  static const routeName = 'create_an_account_screen';
-  late ChooseWayToAuthenticateViewModel viewMode;
+class AuthenticationWayScreen extends StatelessWidget {
+  static const routeName = 'authentication_way_screen';
+  late AuthenticationWayViewModel viewMode;
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    viewMode = ChooseWayToAuthenticateViewModel();
-    return BlocConsumer<ChooseWayToAuthenticateViewModel,
-        ChooseWayToAuthenticateViewState>(
+    viewMode = AuthenticationWayViewModel();
+    return BlocConsumer<AuthenticationWayViewModel, AuthenticationWayViewState>(
       bloc: viewMode,
       listenWhen: (previous, current) {
         return true;
@@ -28,6 +27,7 @@ class ChooseWayToAuthenticateScreen extends StatelessWidget {
       },
       builder: (context, state) {
         return Scaffold(
+          resizeToAvoidBottomInset: false,
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -122,10 +122,10 @@ class ChooseWayToAuthenticateScreen extends StatelessWidget {
   }
 
   signInWithTwitter() async {
-    await viewMode.signInWithTwitter();
+    // await viewMode.signInWithTwitter();
   }
 
   signInWithGoogle() async {
-    await viewMode.signInWithGoogle();
+    // await viewMode.signInWithGoogle();
   }
 }

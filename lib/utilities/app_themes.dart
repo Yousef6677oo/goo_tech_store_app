@@ -4,18 +4,19 @@ import 'app_colors.dart';
 
 abstract class AppThemes {
   static ThemeData lightTheme = ThemeData(
-      scaffoldBackgroundColor: AppColors.primaryColorLight,
-      splashColor: AppColors.accentColorLight,
-      cardColor: AppColors.genderBottomColorLight,
-      appBarTheme: const AppBarTheme(color: Colors.transparent, elevation: 0),
-      secondaryHeaderColor: AppColors.secondaryHeaderColorLight,
-      bottomAppBarTheme:
-          const BottomAppBarTheme(color: AppColors.accentColorLight),
-      hintColor: AppColors.hintColorLight,
-      drawerTheme:
-          const DrawerThemeData(backgroundColor: AppColors.drawerColorLight),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          backgroundColor: AppColors.bottomNavBarLight));
+    scaffoldBackgroundColor: AppColors.primaryColorLight,
+    splashColor: AppColors.accentColorLight,
+    cardColor: AppColors.genderBottomColorLight,
+    appBarTheme: const AppBarTheme(color: Colors.transparent, elevation: 0),
+    secondaryHeaderColor: AppColors.secondaryHeaderColorLight,
+    bottomAppBarTheme:
+        const BottomAppBarTheme(color: AppColors.accentColorLight),
+    hintColor: AppColors.hintColorLight,
+    drawerTheme:
+        const DrawerThemeData(backgroundColor: AppColors.drawerColorLight),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: AppColors.bottomNavBarLight),
+  );
 
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.primaryColorDark,

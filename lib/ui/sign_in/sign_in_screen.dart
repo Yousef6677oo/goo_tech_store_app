@@ -68,117 +68,119 @@ class _SignInScreenState extends State<SignInScreen> {
           resizeToAvoidBottomInset: false,
           body: Form(
             key: _formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                SizedBox(height: height * 0.09),
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: CustomBackArrowIcon()),
-                ),
-                SizedBox(height: height * 0.05),
-                Text(
-                  "Welcome",
-                  style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).secondaryHeaderColor),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: height * 0.005),
-                const Text(
-                  "Please enter your data to continue",
-                  style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xff8F959E)),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: height * 0.12),
-                CustomAuthTextFiled(
-                    labelText: 'email',
-                    controller: emailAddressController,
-                    validator: validateEmailTextField),
-                SizedBox(height: height * 0.03),
-                CustomAuthTextFiled(
-                    labelText: 'Password',
-                    controller: passwordController,
-                    validator: validatePasswordTextField),
-                SizedBox(height: height * 0.035),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.05),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(
-                          context, ForgotPasswordScreen.routeName);
-                    },
-                    child: const Text("Forgot password?",
-                        style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xffEA4335)),
-                        textAlign: TextAlign.end),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(height: height * 0.09),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: CustomBackArrowIcon()),
                   ),
-                ),
-                SizedBox(height: height * 0.035),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-                      child: Text(
-                        "Remember me",
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                            color: Theme.of(context).secondaryHeaderColor),
-                      ),
+                  SizedBox(height: height * 0.05),
+                  Text(
+                    "Welcome",
+                    style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.w600,
+                        color: Theme.of(context).secondaryHeaderColor),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: height * 0.005),
+                  const Text(
+                    "Please enter your data to continue",
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff8F959E)),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: height * 0.12),
+                  CustomAuthTextFiled(
+                      labelText: 'email',
+                      controller: emailAddressController,
+                      validator: validateEmailTextField),
+                  SizedBox(height: height * 0.03),
+                  CustomAuthTextFiled(
+                      labelText: 'Password',
+                      controller: passwordController,
+                      validator: validatePasswordTextField),
+                  SizedBox(height: height * 0.035),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, ForgotPasswordScreen.routeName);
+                      },
+                      child: const Text("Forgot password?",
+                          style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xffEA4335)),
+                          textAlign: TextAlign.end),
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-                      child: CupertinoSwitch(
-                          activeColor: AppColors.switchActiveColor,
-                          value: isOnSwitch,
-                          onChanged: (currentValue) {
-                            isOnSwitch = currentValue;
-                            setState(() {});
-                          }),
-                    )
-                  ],
-                ),
-                const Spacer(),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.01),
-                  child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                          style: const TextStyle(color: Colors.blue),
-                          //apply style to all
-                          children: [
-                            const TextSpan(
-                              text:
-                                  'By connecting your account confirm that you agree with our',
-                              style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color(0xff8F959E)),
-                            ),
-                            TextSpan(
-                              text: ' Term and Condition',
-                              style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600,
-                                  color:
-                                      Theme.of(context).secondaryHeaderColor),
-                            ),
-                          ])),
-                ),
-                SizedBox(height: height * 0.03)
-              ],
+                  ),
+                  SizedBox(height: height * 0.035),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+                        child: Text(
+                          "Remember me",
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).secondaryHeaderColor),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+                        child: CupertinoSwitch(
+                            activeColor: AppColors.switchActiveColor,
+                            value: isOnSwitch,
+                            onChanged: (currentValue) {
+                              isOnSwitch = currentValue;
+                              setState(() {});
+                            }),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: height * 0.12),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+                    child: RichText(
+                        textAlign: TextAlign.center,
+                        text: TextSpan(
+                            style: const TextStyle(color: Colors.blue),
+                            //apply style to all
+                            children: [
+                              const TextSpan(
+                                text:
+                                    'By connecting your account confirm that you agree with our',
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff8F959E)),
+                              ),
+                              TextSpan(
+                                text: ' Term and Condition',
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                    color:
+                                        Theme.of(context).secondaryHeaderColor),
+                              ),
+                            ])),
+                  ),
+                  SizedBox(height: height * 0.03)
+                ],
+              ),
             ),
           ),
           bottomNavigationBar: GestureDetector(
@@ -195,8 +197,8 @@ class _SignInScreenState extends State<SignInScreen> {
     if (_formKey.currentState?.validate() == false) {
       return;
     }
-    await viewModel.signIn(
-        emailAddressController.text, passwordController.text);
+    await viewModel.signIn(emailAddressController.text.trim(),
+        passwordController.text.trim(), isOnSwitch);
   }
 
   String? validateEmailTextField(String value) {

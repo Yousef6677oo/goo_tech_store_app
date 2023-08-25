@@ -8,10 +8,11 @@ import '../../custom_exception/sign_up_exceptions/weak_password.dart';
 class SignUpViewModel extends Cubit<SignUpViewState> {
   SignUpViewModel() : super(InitState());
 
-  Future<void> signUp(String userName, String email, String password) async {
+  Future<void> signUp(
+      String userName, String email, String password, bool rememberMe) async {
     emit(LoadingState());
     try {
-      await FirebaseManager.signUp(userName, email, password);
+      await FirebaseManager.signUp(userName, email, password, rememberMe);
       emit(SuccessState());
     } catch (exception) {
       if (exception is EmailAlreadyInUse) {
