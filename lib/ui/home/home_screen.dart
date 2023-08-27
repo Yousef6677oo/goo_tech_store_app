@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       key: scaffoldKey,
       drawer: customSideMenu(),
-      appBar: AppBar(
+      appBar: currentIndex==2?null:AppBar(
         leading: IconButton(
           icon: SvgPicture.asset(
             "assets/Images/side_menu_icon.svg",
@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
             content: Text('Tap back again to leave'),
           ),
           child: tabs[currentIndex]),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: currentIndex==2?null:BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         onTap: (index) {

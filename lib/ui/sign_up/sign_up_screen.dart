@@ -151,8 +151,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
     if (_formKey.currentState?.validate() == false) {
       return;
     }
-    await viewModel.signUp(userNameController.text.trim(), emailAddressController.text.trim(),
-        passwordController.text.trim(), isOnSwitch);
+    await viewModel.signUp(
+        userNameController.text.trim(),
+        emailAddressController.text.trim(),
+        passwordController.text.trim(),
+        isOnSwitch);
   }
 
   String? validateUserNameTextField(String value) {

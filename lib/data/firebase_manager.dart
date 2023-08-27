@@ -112,8 +112,8 @@ abstract class FirebaseManager {
     }
   }
 
-  static Future saveUserInFireStore(String uid, String email, String userName) async {
-
+  static Future saveUserInFireStore(
+      String uid, String email, String userName) async {
     CollectionReference userCollection =
         FirebaseFirestore.instance.collection("users");
     DocumentReference userDocument = userCollection.doc(uid);

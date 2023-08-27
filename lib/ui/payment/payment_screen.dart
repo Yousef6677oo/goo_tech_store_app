@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../components/custom_button_screen_name.dart';
 import '../../components/custom_textField.dart';
+import '../add_new_card/add_new_card_screen.dart';
 
 class PaymentScreen extends StatefulWidget {
   static const String routeName = "payment_screen";
@@ -99,31 +100,36 @@ class _PaymentScreenState extends State<PaymentScreen> {
               ),
             ),
             SizedBox(height: height * 0.025),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: width * 0.04),
-              child: Container(
-                width: width,
-                height: height * 0.07,
-                decoration: BoxDecoration(
-                    color: isDarkMode
-                        ? const Color(0xff2F244E)
-                        : const Color(0xffF6F2FF),
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: const Color(0xff9775FA))),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset("assets/Images/add_icon.svg",
-                        width: width * 0.06),
-                    SizedBox(width: width * 0.03),
-                    const Text(
-                      "Add new card",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xff9775FA)),
-                    )
-                  ],
+            GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, AddNewCardScreen.routeName);
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: width * 0.04),
+                child: Container(
+                  width: width,
+                  height: height * 0.07,
+                  decoration: BoxDecoration(
+                      color: isDarkMode
+                          ? const Color(0xff2F244E)
+                          : const Color(0xffF6F2FF),
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: const Color(0xff9775FA))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset("assets/Images/add_icon.svg",
+                          width: width * 0.06),
+                      SizedBox(width: width * 0.03),
+                      const Text(
+                        "Add new card",
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xff9775FA)),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
